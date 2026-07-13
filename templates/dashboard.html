@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold">ERP Dashboard</h2>
+        <p class="text-muted mb-0">Business Overview</p>
+    </div>
+    <div>
+        <span class="badge bg-success fs-6">System Online</span>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-0 shadow-lg bg-primary text-white">
+            <div class="card-body text-center">
+                <h6>Total Customers</h6>
+                <h1>{{ dashboard.customer_count }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-0 shadow-lg bg-success text-white">
+            <div class="card-body text-center">
+                <h6>Total Products</h6>
+                <h1>{{ dashboard.product_count }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-0 shadow-lg bg-warning text-dark">
+            <div class="card-body text-center">
+                <h6>Total Orders</h6>
+                <h1>{{ dashboard.order_count }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-0 shadow-lg bg-danger text-white">
+            <div class="card-body text-center">
+                <h6>Total Sales</h6>
+                <h1>{{ dashboard.total_sales }} ₺</h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow mb-4">
+
+            <div class="card-header bg-dark text-white">
+                <strong>Recent Activities</strong>
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                    <tr>
+                        <th>User</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for log in logs %}
+
+                    <tr>
+                        <td>{{ log.username }}</td>
+                        <td>{{ log.action }}</td>
+                        <td>{{ log.created_at }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-4">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-danger text-white">
+                <strong>Critical Stock</strong>
+            </div>
+
+            <div class="card-body">
+
+                {% if critical_products %}
+
+                <ul class="list-group">
+
+                    {% for product in critical_products %}
+
+                    <li class="list-group-item d-flex justify-content-between">
+                        {{ product.name }}
+                        <span class="badge bg-danger">{{ product.stock }}</span>
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+                {% else %}
+
+                <div class="alert alert-success mb-0">
+                    No critical products.
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="card shadow mt-4">
+
+            <div class="card-header bg-info text-white">
+                <strong>System Summary</strong>
+            </div>
+
+            <div class="card-body">
+
+                <p><strong>Customers:</strong> {{ dashboard.customer_count }}</p>
+
+                <p><strong>Products:</strong> {{ dashboard.product_count }}</p>
+
+                <p><strong>Orders:</strong> {{ dashboard.order_count }}</p>
+
+                <p><strong>Revenue:</strong> {{ dashboard.total_sales }} ₺</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

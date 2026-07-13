@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>
+
+Create Order
+
+</h2>
+
+<hr>
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<label>
+
+Order ID
+
+</label>
+
+<input
+type="number"
+name="order_id"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6">
+
+<label>
+
+Quantity
+
+</label>
+
+<input
+type="number"
+name="quantity"
+class="form-control"
+required>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<label>
+
+Customer
+
+</label>
+
+<select
+name="customer_id"
+class="form-control">
+
+{% for customer in customers %}
+
+<option
+value="{{ customer.customer_id }}">
+
+{{ customer.name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="col-md-6">
+
+<label>
+
+Product
+
+</label>
+
+<select
+name="product_id"
+class="form-control">
+
+{% for product in products %}
+
+<option
+value="{{ product.product_id }}">
+
+{{ product.name }}
+
+-
+
+Stock : {{ product.stock }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+</div>
+
+<br>
+
+<button
+class="btn btn-success">
+
+Create Order
+
+</button>
+
+<a
+href="/orders"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+{% endblock %}

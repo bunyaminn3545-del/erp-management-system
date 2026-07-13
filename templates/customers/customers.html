@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+<h2>
+
+Customers
+
+</h2>
+
+<form
+method="GET"
+class="row mb-3">
+
+<div class="col-md-10">
+
+<input
+
+type="text"
+
+name="search"
+
+value="{{ keyword }}"
+
+class="form-control"
+
+placeholder="Search customer...">
+
+</div>
+
+<div class="col-md-2">
+
+<button
+
+class="btn btn-primary w-100">
+
+Search
+
+</button>
+
+</div>
+
+</form>
+
+<a
+href="/customers/add"
+class="btn btn-success">
+
+Add Customer
+
+</a>
+
+</div>
+
+<table class="table table-bordered table-hover shadow">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Email</th>
+
+<th>Balance</th>
+
+<th width="180">
+
+Operations
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for customer in customers %}
+
+<tr>
+
+<td>
+
+{{ customer.customer_id }}
+
+</td>
+
+<td>
+
+{{ customer.name }}
+
+</td>
+
+<td>
+
+{{ customer.phone }}
+
+</td>
+
+<td>
+
+{{ customer.email }}
+
+</td>
+
+<td>
+
+{{ customer.balance }}
+
+</td>
+
+<td>
+
+<a
+href="/customers/edit/{{ customer.customer_id }}"
+class="btn btn-warning btn-sm">
+
+Edit
+
+</a>
+
+<a
+href="/customers/delete/{{ customer.customer_id }}"
+class="btn btn-danger btn-sm">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

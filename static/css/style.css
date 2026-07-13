@@ -1,0 +1,261 @@
+body {
+
+    background-color: #f4f6f9;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar {
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+.navbar-brand {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+.card {
+
+    border: none;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.card-header {
+
+    font-weight: bold;
+
+}
+
+.table {
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.table th {
+
+    text-align: center;
+
+    vertical-align: middle;
+
+}
+
+.table td {
+
+    text-align: center;
+
+    vertical-align: middle;
+
+}
+
+.btn {
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+}
+
+.btn:hover {
+
+    transform: scale(1.03);
+
+}
+
+.form-control {
+
+    border-radius: 8px;
+
+}
+
+.form-select {
+
+    border-radius: 8px;
+
+}
+
+.alert {
+
+    border-radius: 10px;
+
+}
+
+footer {
+
+    margin-top: 60px;
+
+    padding: 20px;
+
+    color: gray;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+h2 {
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+.shadow {
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.12) !important;
+
+}
+
+.dashboard-card {
+
+    padding: 20px;
+
+    text-align: center;
+
+}
+
+.dashboard-card h2 {
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+}
+
+.dashboard-card p {
+
+    font-size: 16px;
+
+    color: gray;
+
+}
+
+.search-box {
+
+    margin-bottom: 20px;
+
+}
+
+.login-card {
+
+    margin-top: 80px;
+
+}
+
+.table-hover tbody tr:hover {
+
+    background-color: #eef5ff;
+
+}
+
+.dropdown-menu {
+
+    border-radius: 10px;
+
+}
+
+.nav-link {
+
+    font-weight: 500;
+
+}
+
+.nav-link:hover {
+
+    color: #ffc107 !important;
+
+}
+
+input:focus,
+
+select:focus,
+
+textarea:focus {
+
+    box-shadow: 0 0 8px rgba(13,110,253,.25) !important;
+
+}
+
+.badge-stock {
+
+    background: #198754;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+}
+
+.badge-low-stock {
+
+    background: #dc3545;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+}
+
+.dashboard-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+}
+
+.table-responsive {
+
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #888;
+
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+
+}}
